@@ -25,7 +25,8 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-
+  let Arr = starWarsArr.sort((a,b)=> b.height - a.height);
+  return Arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +36,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +47,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-
+  let array = arr.join(" ");
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +66,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-
+  for (let index = 0; index < str.length +1; index++) {
+    let str2=str.slice(index);
+    result.push(str2);
+  }
   return result;
 };
 
@@ -76,7 +82,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-
+  let array = arr.split('');
+  return array;
 };
 
 
@@ -123,7 +130,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-
+  let array;
+  let array2;
+  for (let index = 0; index < recipe.ingredients.length; index++) {
+    array = recipe.ingredients[index].split(" ");
+    array2 = array.slice(2);
+    result.push(array2.join(' '));
+  }
   return result;
 };
 
@@ -137,7 +150,13 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let array;
+  let array2;
+  for (let index = 0; index < recipe.ingredients.length; index++) {
+    array = recipe.ingredients[index].split(" ");
+    array2 = array.slice(2);
+    result.push(array2.join(' '));
+  }
   return result;
 };
 
