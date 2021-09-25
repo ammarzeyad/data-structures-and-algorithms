@@ -140,7 +140,16 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  console.log(str);
+  let strArray = str.split('');
+  console.log(strArray);
+  let reverse = strArray.reduce((acc, element) => {
+    console.log(element);
+    acc = element + acc;
+    console.log(acc);
+    return acc;
+  }, '');
+  return reverse;
 };
 
 /* ------------------------------------------------------------------------------------------------

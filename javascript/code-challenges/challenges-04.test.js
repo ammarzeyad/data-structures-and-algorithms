@@ -37,11 +37,12 @@ Write a function called sortNames that takes an array of names and sorts them al
 
 For example: 'Cat' would come before 'apple'
 ------------------------------------------------------------------------------------------------ */
-let array =[];
+
 const sortNames = (arr) => {
-  let sort = arr.sort();
-  array.push(sort);
-  return sort;
+  const sortNames = (arr) => {
+    let sort = arr.sort();
+    array.push(sort);
+    return sort;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,7 +84,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  arr.sort();
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +102,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -354,15 +356,15 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
-  test('It should sort meetings by when they happen', () => {
-    expect(sortSchedule(meetings)).toStrictEqual([
-      new Meeting('Monday', '0900', '0945'),
-      new Meeting('Monday', '0900', '1000'),
-      new Meeting('Tuesday', '1145', '1315'),
-      new Meeting('Wednesday', '0930', '1000'),
-      new Meeting('Wednesday', '1300', '1500'),
-      new Meeting('Friday', '1200', '1345'),
-    ]);
-  });
-});
+// describe('Testing challenge 13', () => {
+//   test('It should sort meetings by when they happen', () => {
+//     expect(sortSchedule(meetings)).toStrictEqual([
+//       new Meeting('Monday', '0900', '0945'),
+//       new Meeting('Monday', '0900', '1000'),
+//       new Meeting('Tuesday', '1145', '1315'),
+//       new Meeting('Wednesday', '0930', '1000'),
+//       new Meeting('Wednesday', '1300', '1500'),
+//       new Meeting('Friday', '1200', '1345'),
+//     ]);
+//   });
+// });
