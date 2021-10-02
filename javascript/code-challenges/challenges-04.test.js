@@ -86,6 +86,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 const alphabetize = (arr) => {
 
   let Sorting = arr.sort();
+
   return Sorting;
 
 
@@ -103,9 +104,9 @@ Here is an example of the input:
   {name: 'Tote bag', price: 15}
 ];
 ------------------------------------------------------------------------------------------------ */
-
 const sortByPrice = (arr) => {
-
+  let Sorting = arr.sort((priceA, priceB) => priceA.price - priceB.price);
+  return Sorting;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +118,6 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-
 };
 
 /* ------------------------------------------------------------------------------------------------
