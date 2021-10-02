@@ -11,7 +11,10 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-
+  let regex = /^(mr. )|(dr. )|(mrs. )|(ms. )/gi;
+  let notAllowedRegex = /^(mr. {2})/gi;
+  let tempArr = arr.filter(item => regex.test(item) && !notAllowedRegex.test(item) ? true : false);
+  return tempArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,10 +26,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  let output = arr.map(element => {
-    return element.charAt(0).toUpperCase() + `${element.slice(1, element.length)}`;
-  });
-  return output;
+  return arr.map(item => item.charAt(0).toUpperCase() + item.slice(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,12 +101,9 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  let name = '';
-  let output = arr.filter(element => {
-    if(element.mass > 77 ){
-      name = name + element.name + ' - '; }
-  });
-  return name.slice(0,name.length-3);
+  let Final = [];
+  arr.length === 0 ? [] : arr.forEach(Value => Value.mass > 77 ? Final.push(Value.name) : false);
+  return Final.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,7 +172,33 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const Test = (arr, row1, col1, row2, col2, row3, col3) => {
+    if (arr[row1][col1] === arr[row2][col2] && arr[row1][col1] === arr[row3][col3]) {
+      if (arr[row1][col1] === '') {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+    else {
+      return false;
+    }
+  };
+
+  let win = false;
+  Test(board, 0, 0, 1, 0, 2, 0) ? win = true : win;
+  Test(board, 0, 1, 1, 1, 2, 1) ? win = true : win;
+  Test(board, 0, 2, 1, 2, 2, 2) ? win = true : win;
+
+  Test(board, 0, 0, 0, 1, 0, 2) ? win = true : win;
+  Test(board, 1, 0, 1, 1, 1, 2) ? win = true : win;
+  Test(board, 2, 0, 2, 1, 2, 2) ? win = true : win;
+
+  Test(board, 0, 0, 1, 1, 2, 2) ? win = true : win;
+  Test(board, 0, 2, 1, 1, 2, 0) ? win = true : win;
+
+  return win;
 };
 
 /* ------------------------------------------------------------------------------------------------
